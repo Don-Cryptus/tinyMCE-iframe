@@ -1,4 +1,4 @@
-import * as editor from './editor';
+import * as editor from './original_editor';
 
 function editorArea() {
   const element = document.createElement('textarea');

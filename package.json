@@ -4,11 +4,12 @@
   "main": "src/index.js",
   "license": "MIT",
   "scripts": {
-    "dev": "webpack serve",
-    "build": "webpack --config webpack.config.js --env production"
+    "build_original": "webpack --config webpack.config.original.js",
+    "fixed_original": "webpack --config webpack.config.fixed.js"
   },
   "dependencies": {
-    "tinymce": "6.0.1"
+    "tinymce": "6.0.1",
+    "tinymce-iframe-fix": "Don-Cryptus/tinyMCE-iframe-fix"
   },
   "devDependencies": {
     "css-loader": "^6.7.1",
@@ -20,7 +21,6 @@
     "mini-css-extract-plugin": "^2.6.0",
     "terser-webpack-plugin": "^5.3.1",
     "webpack": "^5.72.0",
-    "webpack-cli": "^4.9.2",
-    "webpack-dev-server": "^4.8.1"
+    "webpack-cli": "^4.9.2"
   }
 }

@@ -13,7 +13,7 @@ module.exports = (env) => {
   console.log(env);
   return {
     mode: env.production ? 'production' : 'development',
-    entry: './src/index.js',
+    entry: './src/fixed_index.js',
     resolve: {
       extensions: ['.js'],
     },
@@ -23,6 +23,7 @@ module.exports = (env) => {
       new HtmlWebpackPlugin({
         title: 'TinyMCE',
         meta: { viewport: 'width=device-width, initial-scale=1' },
+        filename: 'fixed.html',
         inject: 'body',
       }),
       new webpack.optimize.LimitChunkCountPlugin({
@@ -47,6 +48,7 @@ module.exports = (env) => {
     optimization: {
       chunkIds: env.production ? false : 'natural',
       concatenateModules: true,
+
       minimize: true,
       minimizer: [
         new TerserPlugin({
@@ -62,12 +64,13 @@ module.exports = (env) => {
     output: {
       publicPath: './src',
       filename: '[name].js',
-      path: path.resolve(__dirname, 'dist'),
+
+      path: path.resolve(__dirname, 'fixed'),
       clean: true,
     },
     devServer: {
       static: {
-        directory: path.resolve(__dirname, 'dist'),
+        directory: path.resolve(__dirname, 'fixed'),
       },
     },
   };

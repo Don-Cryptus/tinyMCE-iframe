@@ -1,11 +1,10 @@
 {
   "name": "tinymce-iframe",
   "version": "1.0.0",
-  "main": "src/index.js",
   "license": "MIT",
   "scripts": {
     "build_original": "webpack --config webpack.config.original.js",
-    "fixed_original": "webpack --config webpack.config.fixed.js"
+    "build_fixed": "webpack --config webpack.config.fixed.js"
   },
   "dependencies": {
     "tinymce": "6.0.1",
@@ -14,7 +13,6 @@
   "devDependencies": {
     "css-loader": "^6.7.1",
     "css-minimizer-webpack-plugin": "^3.4.1",
-    "dotenv-webpack": "^7.1.0",
     "html-inline-css-webpack-plugin": "^1.11.1",
     "html-inline-script-webpack-plugin": "^3.0.0",
     "html-webpack-plugin": "^5.5.0",

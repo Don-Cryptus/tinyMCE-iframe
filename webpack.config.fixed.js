@@ -12,7 +12,7 @@ const Dotenv = require('dotenv-webpack');
 module.exports = (env) => {
   console.log(env);
   return {
-    mode: env.production ? 'production' : 'development',
+    mode: 'production',
     entry: './src/fixed_index.js',
     resolve: {
       extensions: ['.js'],
@@ -23,7 +23,6 @@ module.exports = (env) => {
       new HtmlWebpackPlugin({
         title: 'TinyMCE',
         meta: { viewport: 'width=device-width, initial-scale=1' },
-        filename: 'fixed.html',
         inject: 'body',
       }),
       new webpack.optimize.LimitChunkCountPlugin({
@@ -46,7 +45,7 @@ module.exports = (env) => {
       ],
     },
     optimization: {
-      chunkIds: env.production ? false : 'natural',
+      chunkIds: false,
       concatenateModules: true,
 
       minimize: true,
